@@ -29,6 +29,10 @@ if(count($conditions)){
 }
 
 $result = mysql_query($sql);
+if(mysql_num_rows($result) == 0) {
+	echo 'No data found';
+	exit;
+}
 ?>
 
 <h2>Customer List</h2>
@@ -40,12 +44,7 @@ $result = mysql_query($sql);
 		<th>Last Name</th>
 		<th>Occupation</th>
 	</tr>
-<?php
-
-if(mysql_num_rows($result) == 0){
-	echo '<tr><td>No data found</td></tr>';
-}
-else {
+	<?php
 	while($row = mysql_fetch_assoc($result)){
 		echo '<tr>';
 		foreach(
@@ -58,7 +57,6 @@ else {
 			echo '<td>'.htmlspecialchars($row[$field]).'</td>';
 		echo '</tr>';
 	}
-}
 
 ?>
 </table>
