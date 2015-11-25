@@ -1,11 +1,6 @@
 <?php
 namespace SoftwareEngineerTest;
 
-// Question 2 & 3 & 4
-
-/**
- * Class Customer
- */
 /**
  * Class Customer
  * @package SoftwareEngineerTest
@@ -49,7 +44,7 @@ abstract class Customer {
 
 	/**
 	 * @param $amount
-	 * @return float
+	 * @return float absolute value of bonus
      */
 	abstract protected function get_additional_commission($amount);
 
